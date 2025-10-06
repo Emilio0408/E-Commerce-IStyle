@@ -1,0 +1,190 @@
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #ecb177 0%, #dddddf 50%, #ecb177 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            
+        }
+
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            margin-bottom: 40px;
+        }      
+
+        .logo {
+            height: 60px;  
+        }
+        
+        .error-container {
+            background: transparent ;
+            border-radius: 0;
+            box-shadow: none;
+            max-width: 1200px;
+            width: 100%;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 600px;
+            border: none;
+            margin: auto; 
+        }
+
+        .error-content {
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .error-code {
+            font-size: 120px;
+            font-weight: 900;
+            color: #ff385c;
+            line-height: 1;
+            margin-bottom: 20px;
+    
+        }
+
+        .error-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #222222;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .error-description {
+            font-size: 18px;
+            color: none;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: #222222;
+            color: white;
+            border: 2px solid #222222;
+        }
+
+        .btn-primary:hover {
+            background: #000000;
+            border-color: #000000;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-secondary {
+            background: #ffffff;
+            color: #222222;
+            border: 2px solid #222222;
+        }
+
+        .btn-secondary:hover {
+            background: #f7f7f7;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container {
+            position: relative;
+            height: 450px;
+            display: flex;
+            justify-self: center;
+            align-self: center;
+            padding: 60px 40px;
+            
+        }
+
+        .error-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 200%;
+            max-height: 200%;
+            object-fit: contain;
+        }
+
+        .animated-icon {
+            font-size: 48px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .error-container {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+
+            .error-content {
+                padding: 40px 30px;
+                text-align: center;
+                align-items: center;
+            }
+
+            .image-container {
+                height: 200px;
+                padding: 40px 30px;
+            }
+            
+            .error-code {
+                font-size: 80px;
+            }
+
+            .error-title {
+                font-size: 24px;
+            }
+
+            .error-description {
+                font-size: 16px;
+            }
+
+            .action-buttons {
+                justify-content: center;
+            }
+        }

@@ -1,0 +1,66 @@
+/* Stile base dell'alert */
+#custom-alert {
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  padding: 20px 25px; /* Aumentato il padding per maggiore dimensione */
+  border-radius: 8px; /* Bordi più arrotondati */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Ombra più pronunciata */
+  z-index: 1000;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 300px; /* Larghezza minima */
+  max-width: 80%; /* Larghezza massima */
+  text-align: center;
+}
+
+/* Stile per il contenuto dell'alert */
+.alert-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Stile per il messaggio */
+#alert-message {
+  font-size: 1.1em; /* Testo leggermente più grande */
+  margin-right: 15px;
+}
+
+/* Stile per il pulsante di chiusura */
+#close-alert {
+  margin-left: 15px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px; /* Icona più grande */
+  cursor: pointer;
+  padding: 0 8px;
+}
+
+/* Resto del CSS rimane invariato */
+.alert-success {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.alert-error {
+  background-color: #F44336;
+  color: white;
+}
+
+.alert-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(-20px); /* Animazione più fluida */
+}
+
+.alert-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}

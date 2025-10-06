@@ -1,0 +1,486 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+/* IPHONE CONTAINER */
+.iphone-container {
+  position: relative;
+  width: 375px;
+  height: 700px; 
+  z-index: 1;
+  margin: auto;
+}
+
+.iphone-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--iphone-black);
+  border-radius: 50px;
+  border: 12px solid var(--iphone-black);
+  box-shadow: 0 0 0 1px var(--iphone-border),
+              0 30px 60px rgba(0, 0, 0, 0.4),
+              inset 0 0 30px rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+/* NOTCH */
+.notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 35px;
+  background-color: var(--iphone-black);
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  z-index: 10;
+  box-shadow: inset 0 -5px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.notch .speaker {
+  width: 60px;
+  height: 6px;
+  background-color: #2c2c2e;
+  border-radius: 3px;
+}
+
+.notch .camera {
+  width: 12px;
+  height: 12px;
+  background-color: #2c2c2e;
+  border-radius: 50%;
+  border: 2px solid #1a1a1a;
+}
+
+/* HOME INDICATOR */
+.home-indicator {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+  backdrop-filter: blur(5px);
+  z-index: 10;
+}
+
+/* IOS HEADER */
+.ios-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+  margin-bottom: 20px;
+}
+
+.ios-time {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.ios-status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ios-status i {
+  font-size: 14px;
+}
+
+/* SCREEN CONTENT */
+.screen-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--iphone-screen);
+  padding: 70px 25px 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  z-index: 1;
+}
+
+/* TABS */
+.auth-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+  width: 100%;
+  border-bottom: 1px solid var(--medium-gray);
+  padding-bottom: 10px;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 12px 30px;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--dark-gray);
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.tab-btn:active {
+  opacity: 0.7;
+}
+
+.tab-btn.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -11px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary);
+}
+
+/* FORM */
+.auth-form {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.input-with-icon {
+  position: relative;
+  width: 100%;
+}
+
+.input-with-icon i {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--dark-gray);
+  font-size: 16px;
+}
+
+.input-with-icon input {
+  width: 100%;
+  padding: 16px 16px 16px 45px;
+  border: 1px solid var(--medium-gray);
+  border-radius: 10px;
+  font-size: 17px;
+  transition: all 0.2s ease-in-out;
+  background-color: var(--white);
+}
+
+.input-with-icon input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: none;
+}
+
+.input-with-icon input::placeholder {
+  color: #b0b0b0;
+  font-weight: 400;
+}
+
+/* TOGGLE PASSWORD */
+.toggle-password {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--dark-gray);
+  cursor: pointer;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.toggle-password:active {
+  opacity: 0.7;
+}
+
+/* PASSWORD STRENGTH */
+.password-strength {
+  display: flex;
+  gap: 5px;
+  margin-top: 8px;
+  align-items: center;
+}
+
+.strength-bar {
+  height: 4px;
+  flex: 1;
+  background-color: var(--medium-gray);
+  border-radius: 2px;
+  transition: background-color 0.3s;
+}
+
+.strength-text {
+  font-size: 12px;
+  margin-left: 8px;
+  color: var(--dark-gray);
+  font-weight: 500;
+}
+
+.password-weak .strength-bar:nth-child(1) {
+  background-color: var(--error-red);
+}
+
+.password-medium .strength-bar:nth-child(-n+2) {
+  background-color: var(--warning-orange);
+}
+
+.password-strong .strength-bar {
+  background-color: var(--success-green);
+}
+
+.password-weak .strength-text {
+  color: var(--error-red);
+}
+
+.password-medium .strength-text {
+  color: var(--warning-orange);
+}
+
+.password-strong .strength-text {
+  color: var(--success-green);
+}
+
+/* BOTTONI */
+.btn-continue {
+  width: 100%;
+  padding: 16px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin-top: 10px;
+}
+
+.btn-continue:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-continue:active {
+  opacity: 0.8;
+  transform: scale(0.98);
+}
+
+.btn-apple {
+  width: 100%;
+  padding: 16px;
+  background-color: var(--apple-black);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-apple:active {
+  opacity: 0.8;
+  transform: scale(0.98);
+}
+
+/* LINK */
+.footer-links {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.forgot-password {
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.forgot-password:hover {
+  color: var(--warning-orange);
+  text-decoration: underline;
+}
+
+/* IOS SEPARATOR */
+.ios-separator {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.separator-line {
+  flex: 1;
+  height: 1px;
+  background-color: var(--medium-gray);
+}
+
+.separator-text {
+  padding: 0 10px;
+  color: var(--dark-gray);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* TERMINI E CONDIZIONI */
+.terms {
+  margin-top: 20px;
+  font-size: 12px;
+  color: var(--dark-gray);
+  text-align: center;
+  line-height: 1.4;
+}
+
+.terms a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.terms a:hover {
+  text-decoration: underline;
+}
+
+/* CLASSI UTILITY */
+.hidden {
+  display: none;
+}
+
+.was-validated input:invalid {
+  border-color: var(--error-red);
+}
+
+.was-validated input:invalid:focus {
+  border-color: var(--error-red);
+}
+
+/* newsletter */
+.newsletter-container {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.newsletter-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #007AFF;
+    border-radius: 4px;
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+}
+
+.newsletter-checkbox:checked {
+    background-color: #007AFF;
+}
+
+.newsletter-checkbox:checked::after {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.newsletter-label {
+    color: #555;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-height: 800px) {
+  .iphone-container {
+    height: 700px;
+    transform: scale(0.9);
+  }
+}
+
+@media (max-height: 700px) {
+  .iphone-container {
+    height: 600px;
+    transform: scale(0.85);
+  }
+}
+
+@media (max-height: 600px) {
+  .iphone-container {
+    height: 500px;
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+    background-color: var(--iphone-screen);
+  }
+  
+  .iphone-container {
+    width: 100%;
+    height: 100vh;
+    max-height: -webkit-fill-available;
+    border-radius: 0;
+    margin: 0;
+    transform: none !important;
+  }
+  
+  .iphone-frame {
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+  }
+  
+  .screen-content {
+    padding: 80px 20px 30px;
+  }
+  
+  .auth-form {
+    max-width: 100%;
+  }
+  
+  .iphone-button {
+    display: none;
+  }
+}

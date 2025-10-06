@@ -1,0 +1,332 @@
+/* Titolo sezione */
+.section-title {
+  margin: 2.5rem 0 1.5rem;
+}
+
+/* Layout principale */
+.catalogo-container {
+  display: flex;
+  min-height: 100vh;
+  max-width: 1600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Griglia prodotti */
+.griglia-prodotti {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+  padding: 40px;
+}
+
+/* Card prodotto */
+.card-prodotto {
+  position: relative;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius);
+  overflow: hidden;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: var(--transition);
+  height: 580px;
+  box-shadow: var(--shadow);
+}
+
+.card-prodotto::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card-prodotto:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(0, 113, 227, 0.3);
+}
+
+.card-prodotto:hover::before {
+  transform: scaleX(1);
+}
+
+
+/* Immagine prodotto */
+.img-prodotto {
+  width: 100%;
+  height: 240px;
+  object-fit: contain;
+  margin-bottom: 25px;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.card-prodotto:hover .img-prodotto {
+  transform: scale(1.08);
+}
+
+
+/* Nome prodotto */
+.nome-prodotto {
+  font-size: 19px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.3s;
+  line-height: 1.4;
+}
+
+.nome-prodotto:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+/* Prezzo */
+.prezzo {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--secondary);
+  margin-bottom: 20px;
+}
+
+.prezzo-scontato {
+  font-size: 16px;
+  color: #888;
+  text-decoration: line-through;
+  margin-left: 8px;
+}
+
+/* Selettori colore */
+.selettori-colore {
+  display: flex;
+  gap: 0.8rem;
+  margin: 1.5rem 0 2rem;
+  flex-wrap: wrap;
+}
+
+.colore-option {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: var(--transition);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.colore-option:hover {
+  transform: scale(1.1);
+}
+
+.colore-option.active {
+  border-color: var(--primary);
+  transform: scale(1.1);
+  box-shadow: 0 0 0 2px rgba(0, 113, 227, 0.2);
+}
+
+
+/* Pulsante carrello */
+.btn-carrello {
+  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 14px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+  transition: var(--transition);
+  margin-top: auto;
+  box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
+  letter-spacing: 0.3px;
+}
+
+.btn-carrello:hover {
+  background: linear-gradient(135deg, var(--primary-hover), #ff4800);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 113, 227, 0.4);
+}
+
+.carrello-icon {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}
+
+.btn-carrello:hover .carrello-icon {
+  transform: translateX(3px);
+}
+
+/* Cuore preferiti */
+.cuore-btn {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cuore-btn:hover {
+  transform: scale(1.15);
+  background: white;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.cuore-btn.active {
+  background: #ff6b6b;
+}
+
+.cuore-btn.active .cuore-icon {
+  filter: brightness(0) invert(1);
+}
+
+.cuore-icon {
+  width: 22px;
+  height: 22px;
+  transition: all 0.3s ease;
+}
+
+/* Badge sconto */
+.badge-sconto {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  background: linear-gradient(135deg, var(--secondary), #FF9E3F);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(231, 89, 25, 0.3);
+}
+
+
+/* Badge novità */
+.badge-novita {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  background: linear-gradient(135deg, var(--secondary), #FF9E3F);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(231, 89, 25, 0.3);
+}
+
+
+/*MESSAGGIO ASSENZA DI PRODOTTI*/
+.empty-message {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.empty-product-icon {
+  font-size: 4rem;
+  color: var(--secondary);
+  margin-bottom: 1.5rem;
+}
+
+.empty-product-message {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.back-home {
+  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+  color: var(--white);
+  border: none;
+  border-radius: 30px;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.back-home:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 137, 227, 0.3);
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .griglia-prodotti {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .griglia-prodotti {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .card-prodotto {
+    height: 580px;
+    padding: 20px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin: 3rem 0 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .griglia-prodotti {
+    grid-template-columns: 1fr;
+    padding: 20px 15px;
+  }
+  
+  .card-prodotto {
+    height: auto;
+    min-height: 380px;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    padding-bottom: 0.8rem;
+  }
+  
+  .section-title::after {
+    width: 80px;
+    height: 3px;
+  }
+}

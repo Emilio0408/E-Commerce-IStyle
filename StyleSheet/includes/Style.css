@@ -1,0 +1,120 @@
+:root {
+  --primary: #1E89E3;
+  --primary-hover: #1675c7;
+  --secondary: #E75919;
+  --secondary-hover: #d04a10;
+  --white: #FFFFFF;
+  --gray: #8E8E8E;
+  --dark: #1F1F1F;
+  --light-bg: #f8f8f8;
+  --light-gray: #f5f5f7;
+  --border: #e0e0e0;
+  --medium-gray: #d1d1d6;
+  --dark-gray: #8e8e93;
+  --shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.15);
+  --radius: 16px;
+  --radius-small: 12px;
+  --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+
+  /* Colori per iphone e login */
+  --iphone-black: #000000;
+  --iphone-border: #1a1a1a;
+  --iphone-screen: #f7f7f7;
+  --error-red: #FF3B30;
+  --warning-orange: #FF9500;
+  --success-green: #34C759;
+  --apple-black: #000000;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  background: 
+    radial-gradient(circle at top left, rgba(247, 180, 34, 0.15), transparent 60%),
+    radial-gradient(circle at bottom right, rgba(26, 156, 255, 0.15), transparent 70%),
+    linear-gradient(135deg, #ffe1c310, rgba(176, 250, 218, 0.1));
+  background-blend-mode: screen;
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+#tsparticles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 4rem 0 2rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 2px;
+}
+
+.btn {
+  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+  color: var(--white);
+  border: none;
+  border-radius: 30px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, var(--primary-hover), #1268b5);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(30, 137, 227, 0.3);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, var(--secondary), var(--secondary-hover));
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, var(--secondary-hover), #c4410f);
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+}
