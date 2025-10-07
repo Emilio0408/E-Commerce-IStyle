@@ -87,25 +87,7 @@ public class CheckoutControl extends HttpServlet {
 
         SessionCreateParams params = SessionCreateParams.builder()
                 .setMode(SessionCreateParams.Mode.PAYMENT)
-                .setSuccessUrl("http://localhost:8080/IStyle/checkout/confirm?session_id={CHECKOUT_SESSION_ID}") // Se
-                                                                                                                 // il
-                                                                                                                 // pagamento
-                                                                                                                 // va a
-                                                                                                                 // buon
-                                                                                                                 // fine
-                                                                                                                 // reindirizziamo
-                                                                                                                 // verso
-                                                                                                                 // la
-                                                                                                                 // Servlet
-                                                                                                                 // che
-                                                                                                                 // si
-                                                                                                                 // occupa
-                                                                                                                 // di
-                                                                                                                 // gestire
-                                                                                                                 // le
-                                                                                                                 // operazioni
-                                                                                                                 // post
-                                                                                                                 // pagamento
+                .setSuccessUrl("http://localhost:8080/IStyle/checkout/confirm?session_id={CHECKOUT_SESSION_ID}") 
                 .setCancelUrl("http://localhost:8080/IStyle/checkout")
                 .addAllLineItem(lineItems)
                 .build();
