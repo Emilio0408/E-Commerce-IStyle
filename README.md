@@ -13,6 +13,7 @@ presenta anche un'interfaccia e delle funzionalità aggiuntive che rendono l'esp
 
 ## 📁 Struttura del Progetto
 
+<pre>
 src/
 ├── it/IStyle/control/ # Servlet
 ├── it/IStyle/filters/ # Filtri per la sicurezza
@@ -24,6 +25,8 @@ Stylesheet/ # File CSS per lo stile
 Script/ # File JavaScript (AJAX e front-end)
 View/ # File JSP per la struttura delle pagine
 WEB-INF/web.xml # Deployment Descriptor
+
+</pre>
 
 
 
