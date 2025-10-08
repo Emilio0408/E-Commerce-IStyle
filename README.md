@@ -70,6 +70,7 @@ Per abilitare i pagamenti:
 - ✅ Pannello admin
 - ✅ Sezione utente
 - ✅ Lista dei desideri
+- ✅ Checkout
 
 ## 👥 Autori
 
